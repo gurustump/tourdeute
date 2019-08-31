@@ -1,0 +1,72 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Large Monitor Stylesheet
+
+******************************************************************/
+html {
+	&.scrolled {
+		.header {
+			height:$logo-heightScrolled + $logo-top-padding1024*2;
+		}
+		#logo {
+			a {
+				width:$logo-heightScrolled*1.45;
+				height:$logo-heightScrolled;
+			}
+		}
+		.main-menu {
+			li {
+				a {
+					height:$logo-heightScrolled + $logo-top-padding1024*2;
+					line-height:$logo-heightScrolled + $logo-top-padding1024*2;
+				}
+			}
+		}
+		#container {
+			#content {
+				padding-top:$logo-height1024 + $logo-top-padding1024*2;
+			}
+		}
+	}
+	&.theme-dark, &.theme-deep-rose {
+		body.home {
+			.slider-list {
+				.slider-item {
+					padding:0 $gutter*.25;
+				}
+			}
+		}
+	}
+}
+
+#container {
+	#content {
+		padding-top:$logo-height1240 + $logo-top-padding1024*2;
+		transition:padding-top $transition-speed;
+	}
+}
+.wrap {
+	max-width:1200px;
+	margin:0 auto;
+}
+.header {
+	height:$logo-height1240 + $logo-top-padding1024*2;
+}
+#logo {
+	margin:0;
+	a {
+		width:$logo-height1240*1.45;
+		height:$logo-height1240; 
+	}
+}
+.main-menu {
+	li {
+		a {
+			height:$logo-height1240 + $logo-top-padding1024*2;
+			line-height:$logo-height1240 + $logo-top-padding1024*2;
+			font-size:18px;
+		}
+	}
+}

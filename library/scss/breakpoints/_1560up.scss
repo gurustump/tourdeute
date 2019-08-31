@@ -1,0 +1,47 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Super Large Monitor Stylesheet
+
+You can add some advanced styles here if you like. This kicks in
+on larger screens.
+
+******************************************************************/
+#container {
+	#content {
+		padding-top:$logo-height1560 + $logo-top-padding1024*2;
+	}
+}
+.wrap {
+	max-width:1500px;
+}
+.header {
+	height:$logo-height1560 + $logo-top-padding1024*2;
+}
+
+#logo {
+	a {
+		width:$logo-height1560*1.45;
+		height:$logo-height1560;
+	}
+}
+.main-menu {
+	li {
+		a {
+			height:$logo-height1560 + $logo-top-padding1024*2;
+			line-height:$logo-height1560 + $logo-top-padding1024*2;
+		}
+	}
+}
+.entry-content.has-content-secondary {
+	.content-primary {
+		flex:0 0 70%;
+	}
+	.content-secondary {
+		flex:0 0 30%;
+	}
+}
+
+.thumb-list {
+}
