@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
-			<div id="content">
+			<?php $bg = get_post_meta(get_the_ID(),'_guru_page_page_bg',true); ?>
+			<div id="content"<?php echo $bg ? 'class="has-bg" style="background-image:url('.$bg.')"' : ''; ?>>
 				<div class="header-container">
 					<header class="article-header wrap">
 						<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>

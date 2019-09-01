@@ -43,3 +43,11 @@ html {
 	margin-bottom:$gutter1024;
 	padding-bottom:$gutter1024;
 }
+
+
+/******************************************
+Thumbnail lists
+******************************************/
+.thumb-item {
+	flex-basis:33.3%;
+}

@@ -43,3 +43,35 @@ SIDEBARS & ASIDES
 	}
 }
 
+/******************************************
+Thumbnail lists
+******************************************/
+.thumb-list {
+	display:flex;
+	flex-wrap:wrap;
+}
+.thumb-item {
+	flex:0 0 50%;
+	a, .thumb-container, .thumb-title, .thumb {
+		display:block;
+	}
+	.thumb-container {
+		height:0;
+		padding-bottom:56.25%;
+		position:relative;
+	}
+	.thumb {
+		position:absolute;
+		left:0;
+		top:0;
+		min-width:100%;
+	}
+	.thumb-title {
+		display:block;
+		padding:$gutter;
+		font-size:20px;
+		min-height:56px;
+		line-height:28px;
+	}
+}
+

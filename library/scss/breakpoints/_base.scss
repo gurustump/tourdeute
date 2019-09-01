@@ -157,7 +157,7 @@ LAYOUT & GRID STYLES
 	z-index:1;
 	height:100%;
 	#content {
-		background:$white;
+		background-color:$white;
 		min-height:100%;
 		padding-top:$logo-height + $logo-top-padding*2;
 		@include box-sizing;
@@ -165,6 +165,15 @@ LAYOUT & GRID STYLES
 		position:relative;
 		z-index:1;
 		// margin-bottom:$footer-height*-1;
+	}
+}
+#content.has-bg {
+	background-size:cover;
+	background-position:center center;
+	#main {
+		margin:0;
+		background:rgba($white,.3);
+		padding:$gutter;
 	}
 }
 #main {
@@ -240,6 +249,9 @@ h5, .h5 {
 }
 p, ul, ol {
 	margin-top:0;
+}
+ul.info {
+	list-style:disc;
 }
 
 /*********************
@@ -869,17 +881,12 @@ FOOTER STYLES
 /******************************************
 Thumbnail lists
 ******************************************/
-.thumb-list-container {
-	
-}
-.thumb-list {
-	display:flex;
-	flex-wrap:wrap;
-}
 .thumb-item {
-	flex:0 0 33.3%;
 	a, .thumb-container, .thumb-title, .thumb {
 		display:block;
+	}
+	a {
+		text-decoration:none;
 	}
 	.thumb-container {
 		height:0;
@@ -891,6 +898,13 @@ Thumbnail lists
 		left:0;
 		top:0;
 		min-width:100%;
+	}
+	.thumb-title {
+		display:block;
+		padding:$gutter;
+		min-height:2.8em;
+		line-height:1.4em;
+		font-weight:bold;
 	}
 }
 

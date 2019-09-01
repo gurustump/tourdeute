@@ -73,9 +73,9 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'small', 600, 600 );
+add_image_size( 'small', 300, 300 );
 add_image_size( 'extra-large', 1920, 1920 );
-add_image_size( 'movie-thumb', 400, 225, true );
+add_image_size( 'movie-thumb', 512, 288, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -101,8 +101,8 @@ add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'extra-large' => __('Extra Large'),
         'small' => __('Small'),
+        'extra-large' => __('Extra Large'),
         'movie-thumb' => __('Movie (16:9) Thumbnail'),
     ) );
 }

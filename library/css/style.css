@@ -1274,7 +1274,7 @@ LAYOUT & GRID STYLES
   z-index: 1;
   height: 100%; }
   #container #content {
-    background: #fff;
+    background-color: #fff;
     min-height: 100%;
     padding-top: 76px;
     -webkit-box-sizing: border-box;
@@ -1285,6 +1285,14 @@ LAYOUT & GRID STYLES
     margin-bottom: 72px;
     position: relative;
     z-index: 1; }
+
+#content.has-bg {
+  background-size: cover;
+  background-position: center center; }
+  #content.has-bg #main {
+    margin: 0;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 16px; }
 
 #main {
   margin-bottom: 16px; }
@@ -1344,6 +1352,9 @@ h5, .h5 {
 
 p, ul, ol {
   margin-top: 0; }
+
+ul.info {
+  list-style: disc; }
 
 /*********************
 HEADER STYLES
@@ -1901,28 +1912,29 @@ FOOTER STYLES
 /******************************************
 Thumbnail lists
 ******************************************/
-.thumb-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+.thumb-item a, .thumb-item .thumb-container, .thumb-item .thumb-title, .thumb-item .thumb {
+  display: block; }
 
-.thumb-item {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 33.3%;
-  flex: 0 0 33.3%; }
-  .thumb-item a, .thumb-item .thumb-container, .thumb-item .thumb-title, .thumb-item .thumb {
-    display: block; }
-  .thumb-item .thumb-container {
-    height: 0;
-    padding-bottom: 56.25%;
-    position: relative; }
-  .thumb-item .thumb {
-    position: absolute;
-    left: 0;
-    top: 0;
-    min-width: 100%; }
+.thumb-item a {
+  text-decoration: none; }
+
+.thumb-item .thumb-container {
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative; }
+
+.thumb-item .thumb {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 100%; }
+
+.thumb-item .thumb-title {
+  display: block;
+  padding: 16px;
+  min-height: 2.8em;
+  line-height: 1.4em;
+  font-weight: bold; }
 
 /******************************************
 OVERLAYS
@@ -2251,7 +2263,37 @@ SIDEBARS & ASIDES
       margin-bottom: 16px; }
       .widget ul li ul {
         margin-top: 12px;
-        padding-left: 16px; } }
+        padding-left: 16px; }
+  /******************************************
+Thumbnail lists
+******************************************/
+  .thumb-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .thumb-item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%; }
+    .thumb-item a, .thumb-item .thumb-container, .thumb-item .thumb-title, .thumb-item .thumb {
+      display: block; }
+    .thumb-item .thumb-container {
+      height: 0;
+      padding-bottom: 56.25%;
+      position: relative; }
+    .thumb-item .thumb {
+      position: absolute;
+      left: 0;
+      top: 0;
+      min-width: 100%; }
+    .thumb-item .thumb-title {
+      display: block;
+      padding: 16px;
+      font-size: 20px;
+      min-height: 56px;
+      line-height: 28px; } }
 
 @media only screen and (min-width: 1024px) {
   /******************************************************************
@@ -2297,7 +2339,13 @@ Stylesheet: Tablet Landscape Stylsheet
       border-left: 1px solid rgba(10, 127, 165, 0.35); }
   .widget {
     margin-bottom: 32px;
-    padding-bottom: 32px; } }
+    padding-bottom: 32px; }
+  /******************************************
+Thumbnail lists
+******************************************/
+  .thumb-item {
+    -ms-flex-preferred-size: 33.3%;
+    flex-basis: 33.3%; } }
 
 /*********************
 DESKTOP
