@@ -1291,7 +1291,7 @@ LAYOUT & GRID STYLES
   background-position: center center; }
   #content.has-bg #main {
     margin: 0;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.8);
     padding: 16px; }
 
 #main {
@@ -1355,6 +1355,13 @@ p, ul, ol {
 
 ul.info {
   list-style: disc; }
+
+table.info td.profile-img {
+  width: 200px; }
+
+table.info img {
+  display: block;
+  margin: 0; }
 
 /*********************
 HEADER STYLES
@@ -1541,7 +1548,8 @@ POSTS & CONTENT STYLES
   background-image: -o-linear-gradient(left, #0a7fa5, #4ed2d0 25%, #4ed2d0 75%, #0a7fa5);
   background-image: linear-gradient(to right, #0a7fa5, #4ed2d0 25%, #4ed2d0 75%, #0a7fa5);
   color: #fff;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 16px; }
   .header-container .page-title {
     text-transform: uppercase;
     padding: 12px 0; }
@@ -1936,6 +1944,28 @@ Thumbnail lists
   line-height: 1.4em;
   font-weight: bold; }
 
+.profile-list {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center; }
+  .profile-list .img-container img {
+    margin: 0; }
+  .profile-list .profile-item {
+    margin-bottom: 16px;
+    border-top: 1px solid rgba(10, 127, 165, 0.35);
+    padding-top: 16px; }
+    .profile-list .profile-item:first-child {
+      border-top: 0;
+      padding-top: 0; }
+  .profile-list .profile-name {
+    display: block;
+    font-weight: bold;
+    font-size: 1.25em; }
+  .profile-list .profile-title {
+    display: block;
+    font-style: italic;
+    font-size: 1.1em; }
+
 /******************************************
 OVERLAYS
 ******************************************/
@@ -2293,7 +2323,29 @@ Thumbnail lists
       padding: 16px;
       font-size: 20px;
       min-height: 56px;
-      line-height: 28px; } }
+      line-height: 28px; }
+  .profile-list {
+    text-align: left; }
+    .profile-list .img-container {
+      clear: left;
+      max-width: 200px;
+      float: left;
+      margin-right: 16px; }
+      .profile-list .img-container img {
+        display: block; }
+    .profile-list .profile-item {
+      position: relative;
+      height: 200px; }
+      .profile-list .profile-item:first-child {
+        border-top: 0;
+        padding-top: 0; }
+    .profile-list .profile-text {
+      float: left;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); } }
 
 @media only screen and (min-width: 1024px) {
   /******************************************************************
@@ -2305,6 +2357,8 @@ Stylesheet: Tablet Landscape Stylsheet
 ******************************************************************/
   html.theme-dark .entry-content.has-content-secondary .content-secondary {
     border-left-color: rgba(255, 255, 255, 0.15); }
+  #content.has-bg #main {
+    padding: 32px; }
   #main {
     margin-bottom: 32px; }
   .wrap {

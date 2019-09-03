@@ -172,7 +172,7 @@ LAYOUT & GRID STYLES
 	background-position:center center;
 	#main {
 		margin:0;
-		background:rgba($white,.3);
+		background:rgba($white,.8);
 		padding:$gutter;
 	}
 }
@@ -252,6 +252,15 @@ p, ul, ol {
 }
 ul.info {
 	list-style:disc;
+}
+table.info {
+	td.profile-img {
+		width:200px;
+	}
+	img {
+		display:block;
+		margin:0;
+	}
 }
 
 /*********************
@@ -423,6 +432,7 @@ POSTS & CONTENT STYLES
 	background-image:linear-gradient(to right, $tdu-turquoise-dark, $tdu-turquoise-light 25%, $tdu-turquoise-light 75%, $tdu-turquoise-dark);
 	color:$white;
 	text-align:center;
+	margin-bottom:$gutter;
 	.page-title {
 		text-transform:uppercase;
 		padding:$gutter*.75 0;
@@ -905,6 +915,35 @@ Thumbnail lists
 		min-height:2.8em;
 		line-height:1.4em;
 		font-weight:bold;
+	}
+}
+.profile-list {
+	max-width:600px;
+	margin:0 auto;
+	text-align:center;
+	.img-container {
+		img {
+			margin:0;
+		}
+	}
+	.profile-item {
+		margin-bottom:$gutter;
+		border-top:1px solid $border-color;
+		padding-top:$gutter;
+		&:first-child {
+			border-top:0;
+			padding-top:0;
+		}
+	}
+	.profile-name {
+		display:block;
+		font-weight:bold;
+		font-size:1.25em;
+	}
+	.profile-title {
+		display:block;
+		font-style:italic;
+		font-size:1.1em;
 	}
 }
 

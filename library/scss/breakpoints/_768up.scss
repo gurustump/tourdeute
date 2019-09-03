@@ -74,4 +74,29 @@ Thumbnail lists
 		line-height:28px;
 	}
 }
-
+.profile-list {
+	text-align:left;
+	.img-container {
+		clear:left;
+		max-width:200px;
+		float:left;
+		margin-right:$gutter;
+		img {
+			display:block;
+		}
+	}
+	.profile-item {
+		position:relative;
+		height:200px;
+		&:first-child {
+			border-top:0;
+			padding-top:0;
+		}
+	}
+	.profile-text {
+		float:left;
+		position:relative;
+		top:50%;
+		transform:translateY(-50%);
+	}
+}
