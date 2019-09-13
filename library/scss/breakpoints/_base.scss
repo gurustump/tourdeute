@@ -172,7 +172,7 @@ LAYOUT & GRID STYLES
 	background-position:center center;
 	#main {
 		margin:0;
-		background:rgba($white,.8);
+		background:rgba($white,.9);
 		padding:$gutter;
 	}
 }
@@ -718,7 +718,7 @@ COMMENT STYLES
 }
 // comment reply link
 .comment-reply-link {
-	@extend .blue-btn;
+	@extend .btn-blue;
 	font-size: 0.9em;
 	float: right;
 }
@@ -759,7 +759,7 @@ COMMENT FORM STYLES
 }
 // comment submit button
 #submit {
-	@extend .blue-btn;
+	@extend .btn-blue;
 	float: right;
 	font-size: 1em;
 }
@@ -793,6 +793,17 @@ SIDEBARS & ASIDES
 	border: 1px solid $border-color;
 	border-radius: 2px;
 	margin-bottom: 1.5em;
+}
+
+/*********************
+CONTACT FORM
+*********************/
+.contact-form-container {
+	max-width:768px;
+	margin:0 auto;
+}
+.required {
+	color:$red;
 }
 
 /*********************

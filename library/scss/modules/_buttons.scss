@@ -24,33 +24,41 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
 
-%btn {
-  display: inline-block;
-  position: relative;
-  font-family: $sans-serif;
-  text-decoration: none;
-  color: $white;
-  font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
-  font-weight: normal;
-  padding: 0 24px;
-  border-radius: 4px;
-  border: 0;
-  cursor: pointer;
-  @include transition(background-color 0.14s ease-in-out);
+.btn, .btn:visited {
+	display:inline-block;
+	position:relative;
+	font-family:$buttonfont;
+	text-transform:uppercase;
+	text-decoration:none;
+	text-align:center;
+	color:$white;
+	background-color:$tdu-gray;
+	font-size:1em;
+	height:2.5em;
+	line-height:2.5em;
+	font-weight:bold;
+	padding:0 1.5em;
+	border-radius:1.25em;
+	border:0;
+	cursor:pointer;
+	outline:0;
+	@include transition(background-color $transition-speed ease-in-out);
 
-  // hovering on the btn
-  &:hover, &:focus {
-    color: $white;
-    text-decoration: none;
-    outline: none;
-  } // end hover
+	// hovering on the btn
+	&:hover {
+		color:$white;
+		text-decoration:none;
+		outline:none;
+		background-color:darken($tdu-gray, 10%);
+	} // end hover
 
-  // clicking on the button
-  &:active {
-    top: 1px; // adds a tiny hop to the click
-  } // end active
+	// clicking on the button
+	&:active {
+		top: 1px; // adds a tiny hop to the click
+	} // end active
+	&:focus {
+		outline:0;
+	}
 
 } // end .button
 
@@ -59,17 +67,31 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-.blue-btn {
-  @extend %btn; // here we load the btn defaults
-  background-color: $blue;
-
-  &:hover,
-  &:focus {
-    background-color: darken($blue, 4%);
-  } // end hover
-
-  &:active {
-    background-color: darken($blue, 5%);
-  } // end active
-
-} // end blue button
+.btn-red, .btn-red:visited {
+	@extend .btn;
+	background-color:$tdu-red;
+	&:hover {
+		background-color:darken($tdu-red, 10%);
+	}
+}
+.btn-turquoise, .btn-turquoise:visited {
+	@extend .btn;
+	background-color:$tdu-turquoise-light;
+	&:hover {
+		background-color:$tdu-turquoise-dark;
+	}
+}
+.btn-blue, .btn-blue:visited {
+	@extend .btn;
+	background-color:$blue;
+	&:hover {
+		background-color:darken($blue, 10%);
+	}
+}
+.btn-green, .btn-green:visited {
+	@extend .btn;
+	background-color:$green;
+	&:hover {
+		background-color:darken($green, 10%);
+	}
+}
