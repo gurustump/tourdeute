@@ -957,7 +957,15 @@ Thumbnail lists
 		font-size:1.1em;
 	}
 }
-
+.project-list {
+	& > li {
+		margin-bottom:$gutter*3;
+	}
+	.thumb-container {
+		max-width:360px;
+		margin:0 auto;
+	}
+}
 /******************************************
 OVERLAYS
 ******************************************/

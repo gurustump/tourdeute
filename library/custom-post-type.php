@@ -36,12 +36,12 @@ function person_custom_type() {
 			'edit_item' => __( 'Edit Person', 'bonestheme' ),
 			'new_item' => __( 'New Person', 'bonestheme' ),
 			'view_item' => __( 'View Person', 'bonestheme' ),
-			'search_items' => __( 'Search Person', 'bonestheme' ),
+			'search_items' => __( 'Search People', 'bonestheme' ),
 			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ),
 			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ),
 			'parent_item_colon' => ''
 			),
-			'description' => __( 'For people involved in shows: cast and crew', 'bonestheme' ),
+			'description' => __( 'For listing people on the website', 'bonestheme' ),
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
@@ -78,12 +78,12 @@ function video_custom_type() {
 			'edit_item' => __( 'Edit Video', 'bonestheme' ),
 			'new_item' => __( 'New Video', 'bonestheme' ),
 			'view_item' => __( 'View Video', 'bonestheme' ),
-			'search_items' => __( 'Search Video', 'bonestheme' ),
+			'search_items' => __( 'Search Videos', 'bonestheme' ),
 			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ),
 			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ),
 			'parent_item_colon' => ''
 			),
-			'description' => __( 'For videos involved in shows: cast and crew', 'bonestheme' ),
+			'description' => __( 'For videos that appear on the video page', 'bonestheme' ),
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
@@ -104,6 +104,48 @@ function video_custom_type() {
 }
 // adding the function to the Wordpress init
 add_action( 'init', 'video_custom_type');
+
+
+// Project custom post type
+function project_custom_type() { 
+	// creating (registering) the custom type 
+	register_post_type( 'project', // (http://codex.wordpress.org/Function_Reference/register_post_type)
+		array( 'labels' => array(
+			'name' => __( 'Projects', 'bonestheme' ), 
+			'singular_name' => __( 'Project', 'bonestheme' ), 
+			'all_items' => __( 'All Projects', 'bonestheme' ),
+			'add_new' => __( 'Add New', 'bonestheme' ),
+			'add_new_item' => __( 'Add New Project', 'bonestheme' ),
+			'edit' => __( 'Edit', 'bonestheme' ),
+			'edit_item' => __( 'Edit Project', 'bonestheme' ),
+			'new_item' => __( 'New Project', 'bonestheme' ),
+			'view_item' => __( 'View Project', 'bonestheme' ),
+			'search_items' => __( 'Search Projects', 'bonestheme' ),
+			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ),
+			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ),
+			'parent_item_colon' => ''
+			),
+			'description' => __( 'For projects on the projects page', 'bonestheme' ),
+			'public' => true,
+			'publicly_queryable' => true,
+			'exclude_from_search' => false,
+			'show_ui' => true,
+			'query_var' => true,
+			'menu_position' => 7,
+			'menu_icon' => 'dashicons-hammer',
+			'rewrite'	=> array( 'slug' => 'projects', 'with_front' => false ),
+			//'has_archive' => 'show',
+			'has_archive' => false,
+			'hierarchical' => false,
+			'capability_type' => 'post',
+			// the next one is important, it tells what's enabled in the post editor 
+			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'sticky')
+		) // end of options 
+	); // end of register post type 
+	
+}
+// adding the function to the Wordpress init
+add_action( 'init', 'project_custom_type');
 	
 
 ?>

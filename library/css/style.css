@@ -1998,6 +1998,13 @@ Thumbnail lists
     font-style: italic;
     font-size: 1.1em; }
 
+.project-list > li {
+  margin-bottom: 48px; }
+
+.project-list .thumb-container {
+  max-width: 360px;
+  margin: 0 auto; }
+
 /******************************************
 OVERLAYS
 ******************************************/
@@ -2377,7 +2384,30 @@ Thumbnail lists
       top: 50%;
       -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
-      transform: translateY(-50%); } }
+      transform: translateY(-50%); }
+  .project-list > li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .project-list > li:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .project-list .thumb-container {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 360px;
+    flex: 0 0 360px; }
+  .project-list .item-content-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; } }
 
 @media only screen and (min-width: 1024px) {
   /******************************************************************
@@ -2616,7 +2646,11 @@ on larger screens.
   .entry-content.has-content-secondary .content-secondary {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 30%;
-    flex: 0 0 30%; } }
+    flex: 0 0 30%; }
+  .project-list .thumb-container {
+    -ms-flex-preferred-size: 480px;
+    flex-basis: 480px;
+    max-width: 480px; } }
 
 /*********************
 RETINA (2x RESOLUTION DEVICES)

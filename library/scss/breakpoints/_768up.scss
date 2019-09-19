@@ -100,3 +100,17 @@ Thumbnail lists
 		transform:translateY(-50%);
 	}
 }
+.project-list {
+	& > li {
+		display:flex;
+		@include clearfix;
+	}
+	.thumb-container {
+		flex:0 0 360px;
+	}
+	.item-content-container {
+		display:flex;
+		justify-content:center;
+		flex-direction:column;
+	}
+}
