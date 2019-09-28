@@ -58,6 +58,10 @@ Thumbnail lists
 		flex-direction:column;
 		justify-content:center;
 	}
+	.thumb-container {
+		top:50%;
+		transform:translateY(-50%);
+	}
 	.thumb-title {
 		padding-top:0;
 	}

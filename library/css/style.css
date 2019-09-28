@@ -2412,6 +2412,11 @@ Thumbnail lists
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; }
+    .thumb-item .thumb-container {
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
     .thumb-item .thumb-title {
       padding-top: 0; }
   .profile-list {
