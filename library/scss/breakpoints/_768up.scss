@@ -46,32 +46,20 @@ SIDEBARS & ASIDES
 /******************************************
 Thumbnail lists
 ******************************************/
-.thumb-list {
-	display:flex;
-	flex-wrap:wrap;
-}
 .thumb-item {
-	flex:0 0 50%;
-	a, .thumb-container, .thumb-title, .thumb {
-		display:block;
+	display:flex;
+	a, .item-text {
+		flex:0 0 50%;
 	}
-	.thumb-container {
-		height:0;
-		padding-bottom:56.25%;
-		position:relative;
-	}
-	.thumb {
-		position:absolute;
-		left:0;
-		top:0;
-		min-width:100%;
+	.item-text {
+		padding-left:$gutter768;
+		@include box-sizing;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
 	}
 	.thumb-title {
-		display:block;
-		padding:$gutter;
-		font-size:20px;
-		min-height:56px;
-		line-height:28px;
+		padding-top:0;
 	}
 }
 .profile-list {
@@ -88,6 +76,7 @@ Thumbnail lists
 	.profile-item {
 		position:relative;
 		height:200px;
+		@include clearfix;
 		&:first-child {
 			border-top:0;
 			padding-top:0;

@@ -903,6 +903,14 @@ FOOTER STYLES
 Thumbnail lists
 ******************************************/
 .thumb-item {
+	margin-top:$gutter;
+	padding-top:$gutter;
+	border-top:1px solid $border-color;
+	&:first-child {
+		margin-top:0;
+		padding-top:0;
+		border-top:0;
+	}
 	a, .thumb-container, .thumb-title, .thumb {
 		display:block;
 	}
@@ -922,10 +930,7 @@ Thumbnail lists
 	}
 	.thumb-title {
 		display:block;
-		padding:$gutter;
-		min-height:2.8em;
-		line-height:1.4em;
-		font-weight:bold;
+		padding-top:$gutter;
 	}
 }
 .profile-list {
@@ -1045,6 +1050,9 @@ html.ov-active {
 				height:1080px;
 				width:1920px;
 			}
+		}
+		iframe {
+			max-width:100%;
 		}
 	}
 }

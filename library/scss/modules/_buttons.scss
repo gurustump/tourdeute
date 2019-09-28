@@ -95,3 +95,34 @@ and it will create a button dependant on those variables.
 		background-color:darken($green, 10%);
 	}
 }
+.btn-play {
+	position:relative;
+	&:hover {
+		&:before {
+			background-color:rgba($white,.25);
+		}
+	}
+	&:before {
+		content:"";
+		display:block;
+		height:64px;
+		width:64px;
+		border:3px solid $white;
+		border-radius:50%;
+		position:absolute;
+		left:50%;
+		top:50%;
+		transform:translate(-50%,-50%);
+		z-index:1;
+		background-color:rgba($black,.25);
+		transition:background-color $transition-speed;
+	}
+	@include tri(right, 14px, 24px, $white);
+	&:after {
+		position:absolute;
+		left:50%;
+		top:50%;
+		transform:translate(-10px,-50%);
+		z-index:1;
+	}
+}

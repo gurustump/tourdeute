@@ -892,6 +892,54 @@ and it will create a button dependant on those variables.
   .btn-green:hover, .btn-green:visited:hover {
     background-color: #007f10; }
 
+.btn-play {
+  position: relative; }
+  .btn-play:hover:before {
+    background-color: rgba(255, 255, 255, 0.25); }
+  .btn-play:before {
+    content: "";
+    display: block;
+    height: 64px;
+    width: 64px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.25);
+    -webkit-transition: background-color 375ms;
+    -o-transition: background-color 375ms;
+    transition: background-color 375ms; }
+  .btn-play:after {
+    content: "";
+    width: 0;
+    height: 0;
+    display: inline-block;
+    float: none;
+    margin: 0;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    border-left: 24px solid #fff; }
+  .btn-play:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-10px, -50%);
+    -ms-transform: translate(-10px, -50%);
+    transform: translate(-10px, -50%);
+    z-index: 1; }
+
 /******************************************************************
 Site Name:
 Author:
@@ -1952,29 +2000,30 @@ FOOTER STYLES
 /******************************************
 Thumbnail lists
 ******************************************/
-.thumb-item a, .thumb-item .thumb-container, .thumb-item .thumb-title, .thumb-item .thumb {
-  display: block; }
-
-.thumb-item a {
-  text-decoration: none; }
-
-.thumb-item .thumb-container {
-  height: 0;
-  padding-bottom: 56.25%;
-  position: relative; }
-
-.thumb-item .thumb {
-  position: absolute;
-  left: 0;
-  top: 0;
-  min-width: 100%; }
-
-.thumb-item .thumb-title {
-  display: block;
-  padding: 16px;
-  min-height: 2.8em;
-  line-height: 1.4em;
-  font-weight: bold; }
+.thumb-item {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(10, 127, 165, 0.35); }
+  .thumb-item:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0; }
+  .thumb-item a, .thumb-item .thumb-container, .thumb-item .thumb-title, .thumb-item .thumb {
+    display: block; }
+  .thumb-item a {
+    text-decoration: none; }
+  .thumb-item .thumb-container {
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative; }
+  .thumb-item .thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100%; }
+  .thumb-item .thumb-title {
+    display: block;
+    padding-top: 16px; }
 
 .profile-list {
   max-width: 600px;
@@ -2093,6 +2142,8 @@ html.ov-active .ov-container {
     .ov.vid-player-container.fullHD .vid-player-wrapper {
       height: 1080px;
       width: 1920px; }
+    .ov.vid-player-container iframe {
+      max-width: 100%; }
 
 .ov-close {
   position: absolute;
@@ -2336,33 +2387,33 @@ SIDEBARS & ASIDES
   /******************************************
 Thumbnail lists
 ******************************************/
-  .thumb-list {
+  .thumb-item {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
-  .thumb-item {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%; }
-    .thumb-item a, .thumb-item .thumb-container, .thumb-item .thumb-title, .thumb-item .thumb {
-      display: block; }
-    .thumb-item .thumb-container {
-      height: 0;
-      padding-bottom: 56.25%;
-      position: relative; }
-    .thumb-item .thumb {
-      position: absolute;
-      left: 0;
-      top: 0;
-      min-width: 100%; }
+    display: flex; }
+    .thumb-item a, .thumb-item .item-text {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%; }
+    .thumb-item .item-text {
+      padding-left: 24px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
     .thumb-item .thumb-title {
-      display: block;
-      padding: 16px;
-      font-size: 20px;
-      min-height: 56px;
-      line-height: 28px; }
+      padding-top: 0; }
   .profile-list {
     text-align: left; }
     .profile-list .img-container {
@@ -2375,6 +2426,10 @@ Thumbnail lists
     .profile-list .profile-item {
       position: relative;
       height: 200px; }
+      .profile-list .profile-item:after {
+        content: "";
+        display: table;
+        clear: both; }
       .profile-list .profile-item:first-child {
         border-top: 0;
         padding-top: 0; }
