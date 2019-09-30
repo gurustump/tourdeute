@@ -134,3 +134,14 @@ NAVIGATION STYLES
 .trigger-nav {
 	display:none;
 }
+body.home {
+	.home-sizzle-container {
+		display:block;
+	}
+	.mobile-logo {
+		display:none;
+	}
+	#home_sizzle {
+		display:block;
+	}
+}

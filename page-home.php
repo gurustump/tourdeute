@@ -16,6 +16,9 @@
 <?php get_header(); ?>
 			<div id="content">
 				<div class="home-sizzle-container">
+					<div class="mobile-logo">
+						<img src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png" alt="Tiwahe Tour De Ute" />
+					</div>
 					<video class="bg-video" id="home_sizzle" autoplay loop muted>
 						<source src="<?php echo get_template_directory_uri(); ?>/library/video/home-vid-medbitrate.mp4" type="video/mp4"></source>
 						<source src="<?php echo get_template_directory_uri(); ?>/library/video/home-vid-medbitrate.webm" type="video/webm"></source>

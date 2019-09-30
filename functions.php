@@ -32,6 +32,8 @@ function bones_ahoy() {
 
   // launching operation cleanup
   add_action( 'init', 'bones_head_cleanup' );
+  // adding body classes from custom post metabox data
+  add_filter('body_class', 'add_metabox_body_classes');
   // A better title
   add_filter( 'wp_title', 'rw_title', 10, 3 );
   // remove WP version from RSS
@@ -63,6 +65,15 @@ function bones_ahoy() {
 // let's get this party started
 add_action( 'after_setup_theme', 'bones_ahoy' );
 
+
+/************* BODY CLASS FROM PAGE CUSTOM METABOX *************/
+function add_metabox_body_classes($classes) {
+	$bodyClassMeta = get_post_meta(get_the_ID(),'_guru_page_body_class',true);
+	if ($bodyClassMeta) {
+		$classes[] = strip_tags($bodyClassMeta);
+	}
+	return $classes;
+}
 
 /************* OEMBED SIZE OPTIONS *************/
 
