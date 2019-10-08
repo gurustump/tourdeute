@@ -86,7 +86,7 @@ if ( ! isset( $content_width ) ) {
 // Thumbnail sizes
 add_image_size( 'small', 300, 300 );
 add_image_size( 'extra-large', 1920, 1920 );
-add_image_size( 'movie-thumb', 512, 288, true );
+add_image_size( 'movie-thumb', 752, 423, true );
 
 /*
 to add more sizes, simply copy a line from above

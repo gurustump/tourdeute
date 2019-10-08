@@ -45,11 +45,10 @@
 					</nav>
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 					<div class="social">
-						<?php echo $testorama; ?>
-						<a class="svg-container" target="_blank" href=""><?php echoSVG('icInstagram'); ?></a>
-						<a class="svg-container" target="_blank" href=""><?php echoSVG('icTwitter'); ?></a>
-						<a class="svg-container" target="_blank" href=""><?php echoSVG('icYoutube'); ?></a>
-						<a class="svg-container" target="_blank" href=""><?php echoSVG('icFacebook'); ?></a>
+						<a class="svg-container" target="_blank" href="https://www.instagram.com/tourdeute/ "><?php echoSVG('icInstagram'); ?></a>
+						<a class="svg-container" target="_blank" href="https://twitter.com/tourdeute "><?php echoSVG('icTwitter'); ?></a>
+						<?php /* <a class="svg-container" target="_blank" href=""><?php echoSVG('icYoutube'); ?></a> */ ?>
+						<a class="svg-container" target="_blank" href="https://www.facebook.com/TourDeUte/"><?php echoSVG('icFacebook'); ?></a>
 					</div>
 				</div>
 			</footer>
