@@ -834,7 +834,7 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.btn, .btn-red, .btn-red:visited, .btn-turquoise, .btn-turquoise:visited, .btn-blue, .comment-reply-link, #submit, .btn-blue:visited, .comment-reply-link:visited, .btn-green, .btn-green:visited, .btn:visited, .btn-red:visited, .btn-turquoise:visited, .btn-blue:visited, .comment-reply-link:visited, #submit:visited, .btn-green:visited {
+.btn, .btn-red, .btn-red:visited, .btn-turquoise, .btn-turquoise:visited, .btn-turquoise-dark, .btn-turquoise-dark:visited, .btn-blue, .comment-reply-link, #submit, .btn-blue:visited, .comment-reply-link:visited, .btn-green, .btn-green:visited, .btn:visited, .btn-red:visited, .btn-turquoise:visited, .btn-turquoise-dark:visited, .btn-blue:visited, .comment-reply-link:visited, #submit:visited, .btn-green:visited {
   display: inline-block;
   position: relative;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -857,14 +857,14 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   -ms-transition: background-color 375ms ease-in-out;
   -o-transition: background-color 375ms ease-in-out;
   transition: background-color 375ms ease-in-out; }
-  .btn:hover, .btn-red:hover, .btn-turquoise:hover, .btn-blue:hover, .comment-reply-link:hover, #submit:hover, .btn-green:hover, .btn:visited:hover, .btn-red:visited:hover, .btn-turquoise:visited:hover, .btn-blue:visited:hover, .comment-reply-link:visited:hover, #submit:visited:hover, .btn-green:visited:hover {
+  .btn:hover, .btn-red:hover, .btn-turquoise:hover, .btn-turquoise-dark:hover, .btn-blue:hover, .comment-reply-link:hover, #submit:hover, .btn-green:hover, .btn:visited:hover, .btn-red:visited:hover, .btn-turquoise:visited:hover, .btn-turquoise-dark:visited:hover, .btn-blue:visited:hover, .comment-reply-link:visited:hover, #submit:visited:hover, .btn-green:visited:hover {
     color: #fff;
     text-decoration: none;
     outline: none;
     background-color: #2c2a31; }
-  .btn:active, .btn-red:active, .btn-turquoise:active, .btn-blue:active, .comment-reply-link:active, #submit:active, .btn-green:active, .btn:visited:active, .btn-red:visited:active, .btn-turquoise:visited:active, .btn-blue:visited:active, .comment-reply-link:visited:active, #submit:visited:active, .btn-green:visited:active {
+  .btn:active, .btn-red:active, .btn-turquoise:active, .btn-turquoise-dark:active, .btn-blue:active, .comment-reply-link:active, #submit:active, .btn-green:active, .btn:visited:active, .btn-red:visited:active, .btn-turquoise:visited:active, .btn-turquoise-dark:visited:active, .btn-blue:visited:active, .comment-reply-link:visited:active, #submit:visited:active, .btn-green:visited:active {
     top: 1px; }
-  .btn:focus, .btn-red:focus, .btn-turquoise:focus, .btn-blue:focus, .comment-reply-link:focus, #submit:focus, .btn-green:focus, .btn:visited:focus, .btn-red:visited:focus, .btn-turquoise:visited:focus, .btn-blue:visited:focus, .comment-reply-link:visited:focus, #submit:visited:focus, .btn-green:visited:focus {
+  .btn:focus, .btn-red:focus, .btn-turquoise:focus, .btn-turquoise-dark:focus, .btn-blue:focus, .comment-reply-link:focus, #submit:focus, .btn-green:focus, .btn:visited:focus, .btn-red:visited:focus, .btn-turquoise:visited:focus, .btn-turquoise-dark:visited:focus, .btn-blue:visited:focus, .comment-reply-link:visited:focus, #submit:visited:focus, .btn-green:visited:focus {
     outline: 0; }
 
 /*
@@ -881,6 +881,11 @@ and it will create a button dependant on those variables.
   background-color: #4ed2d0; }
   .btn-turquoise:hover, .btn-turquoise:visited:hover {
     background-color: #0a7fa5; }
+
+.btn-turquoise-dark, .btn-turquoise-dark:visited {
+  background-color: #0a7fa5; }
+  .btn-turquoise-dark:hover, .btn-turquoise-dark:visited:hover {
+    background-color: #075e7a; }
 
 .btn-blue, .comment-reply-link, #submit, .btn-blue:visited, .comment-reply-link:visited, #submit:visited {
   background-color: #2980b9; }
@@ -939,6 +944,19 @@ and it will create a button dependant on those variables.
     -ms-transform: translate(-10px, -50%);
     transform: translate(-10px, -50%);
     z-index: 1; }
+
+.btn-download:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.btn-download:after {
+  content: "";
+  float: right;
+  margin-left: 6px;
+  width: 20px;
+  height: 100%;
+  background: url(../images/ic-download.svg) no-repeat 50% 50%; }
 
 /******************************************************************
 Site Name:
@@ -1374,12 +1392,12 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #0085db;
+  color: #0a7fa5;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #0069ad; }
+    color: #075e7a; }
   a:link, a:visited:link {
     /*
 		this highlights links on iPhones/iPads.
@@ -2047,12 +2065,14 @@ Thumbnail lists
     font-style: italic;
     font-size: 1.1em; }
 
-.project-list > li {
+.info-list > li {
   margin-bottom: 48px; }
 
-.project-list .thumb-container {
+.info-list .thumb-container {
   max-width: 360px;
   margin: 0 auto; }
+  .info-list .thumb-container img {
+    margin: 0; }
 
 /******************************************
 OVERLAYS
@@ -2483,19 +2503,23 @@ Thumbnail lists
       -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%); }
-  .project-list > li {
+  .info-list > li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-    .project-list > li:after {
+    .info-list > li:after {
       content: "";
       display: table;
       clear: both; }
-  .project-list .thumb-container {
+  .info-list .thumb-container {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 360px;
-    flex: 0 0 360px; }
-  .project-list .item-content-container {
+    flex: 0 0 360px;
+    margin-right: 24px; }
+  .info-list .item-content-container {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2753,7 +2777,7 @@ on larger screens.
     -webkit-box-flex: 0;
     -ms-flex: 0 0 30%;
     flex: 0 0 30%; }
-  .project-list .thumb-container {
+  .info-list .thumb-container {
     -ms-flex-preferred-size: 480px;
     flex-basis: 480px;
     max-width: 480px; } }

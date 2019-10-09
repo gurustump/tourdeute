@@ -93,15 +93,17 @@ Thumbnail lists
 		transform:translateY(-50%);
 	}
 }
-.project-list {
+.info-list {
 	& > li {
 		display:flex;
 		@include clearfix;
 	}
 	.thumb-container {
 		flex:0 0 360px;
+		margin-right:$gutter768;
 	}
 	.item-content-container {
+		flex:1 1 auto;
 		display:flex;
 		justify-content:center;
 		flex-direction:column;

@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
-			<?php $bg = get_post_meta(get_the_ID(),'_guru_page_page_bg',true); ?>
+			<?php $bgURL = get_post_meta(get_the_ID(),'_guru_page_page_bg',true); 
+			$bgID = attachment_url_to_postid($bgURL);
+			$bg = wp_get_attachment_image_url($bgID, 'extra-large');
+			?>
 			<div id="content"<?php echo $bg ? 'class="has-bg" style="background-image:url('.$bg.')"' : ''; ?>>
 				<div class="header-container">
 					<header class="article-header wrap">

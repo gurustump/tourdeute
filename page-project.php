@@ -19,7 +19,7 @@
 							<section class="entry-content" itemprop="articleBody">
 								<div class="content-primary">
 									<div class="thumb-list-container video-thumb-list-container">
-										<ul class="project-list">
+										<ul class="info-list">
 											<?php global $post;
 											$items = get_posts(array(
 													'posts_per_page'=>-1,

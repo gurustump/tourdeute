@@ -146,6 +146,48 @@ function project_custom_type() {
 }
 // adding the function to the Wordpress init
 add_action( 'init', 'project_custom_type');
+
+
+// Resource custom post type
+function resource_custom_type() { 
+	// creating (registering) the custom type 
+	register_post_type( 'resource', // (http://codex.wordpress.org/Function_Reference/register_post_type)
+		array( 'labels' => array(
+			'name' => __( 'Resources', 'bonestheme' ), 
+			'singular_name' => __( 'Resource', 'bonestheme' ), 
+			'all_items' => __( 'All Resources', 'bonestheme' ),
+			'add_new' => __( 'Add New', 'bonestheme' ),
+			'add_new_item' => __( 'Add New Resource', 'bonestheme' ),
+			'edit' => __( 'Edit', 'bonestheme' ),
+			'edit_item' => __( 'Edit Resource', 'bonestheme' ),
+			'new_item' => __( 'New Resource', 'bonestheme' ),
+			'view_item' => __( 'View Resource', 'bonestheme' ),
+			'search_items' => __( 'Search Resources', 'bonestheme' ),
+			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ),
+			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ),
+			'parent_item_colon' => ''
+			),
+			'description' => __( 'For resources on the resources page', 'bonestheme' ),
+			'public' => true,
+			'publicly_queryable' => true,
+			'exclude_from_search' => false,
+			'show_ui' => true,
+			'query_var' => true,
+			'menu_position' => 7,
+			'menu_icon' => 'dashicons-media-default',
+			'rewrite'	=> array( 'slug' => 'resources', 'with_front' => false ),
+			//'has_archive' => 'show',
+			'has_archive' => false,
+			'hierarchical' => false,
+			'capability_type' => 'post',
+			// the next one is important, it tells what's enabled in the post editor 
+			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'sticky')
+		) // end of options 
+	); // end of register post type 
+	
+}
+// adding the function to the Wordpress init
+add_action( 'init', 'resource_custom_type');
 	
 
 ?>

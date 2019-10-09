@@ -43,7 +43,7 @@
 												$post = $item;
 												setup_postdata($post);
 												$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'movie-thumb');
-												$itemMeta = get_post_meta(get_the_ID());
+												$itemMeta = get_post_meta($item->ID);
 												?>
 												<?php if ($itemMeta['_guru_video_video_ID'][0]) { ?>
 												<li class="thumb-item">

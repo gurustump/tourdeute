@@ -81,6 +81,13 @@ and it will create a button dependant on those variables.
 		background-color:$tdu-turquoise-dark;
 	}
 }
+.btn-turquoise-dark, .btn-turquoise-dark:visited {
+	@extend .btn;
+	background-color:$tdu-turquoise-dark;
+	&:hover {
+		background-color:darken($tdu-turquoise-dark, 9%);
+	}
+}
 .btn-blue, .btn-blue:visited {
 	@extend .btn;
 	background-color:$blue;
@@ -124,5 +131,16 @@ and it will create a button dependant on those variables.
 		top:50%;
 		transform:translate(-10px,-50%);
 		z-index:1;
+	}
+}
+.btn-download {
+	@include clearfix;
+	&:after {
+		content:"";
+		float:right;
+		margin-left:6px;
+		width:20px;
+		height:100%;
+		background:url(../images/ic-download.svg) no-repeat 50% 50%;
 	}
 }
